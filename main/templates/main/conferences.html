@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Conferences |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Conferences </h2>
+  <hr id="main">
+  {% if conferences %}
+  <ul>
+    {% for conference in conferences %}
+    <li> {{conference.Description}} </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

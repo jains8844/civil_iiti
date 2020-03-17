@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block title %}B.Tech Students |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+<h2 id="main_h"> B.Tech Students </h2>
+  <hr id="main">
+  <div class="all">
+    {% for item in dictionary.items %}
+    <h2> {{item.0}} </h2>
+    <hr id="main2">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">S.No.</th>
+          <th scope="col">Roll Number</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stu in item.1 %}
+        <tr>
+	         <th scope="row"> {{forloop.counter}} </th>
+	          <td> {{stu.Roll_no}} </td>
+	          <td> {{stu.Name}} </td>
+           </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    {% endfor %}
+{% endblock %}

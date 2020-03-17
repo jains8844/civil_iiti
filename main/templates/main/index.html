@@ -1,0 +1,123 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} Home | {% endblock %}
+{% block body %}
+<div class="container">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      {% for i in slideshow %}
+      <li data-target="#myCarousel" data-slide-to="{{forloop.counter}}" {% if forloop.counter == 1 %} class="active" {% endif %}></li>
+      {% endfor %}
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      {% for i in slideshow %}
+      <div {% if forloop.counter == 1 %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
+        <img src="{{ i.File.url }}" class="d-block w-100" alt="{{i.Title}}">
+        {% if i.Caption %}
+        <div class="carousel-caption d-none d-md-block">
+          <p>{{ i.Caption }}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="car_button">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" id="car_button">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+    <table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td>
+      <h3 align="center" style="color:white;padding:10px 0px;background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));"> <strong>Welcome Message</strong>  <br></h3>
+      <hr id="hr-main">
+      <p> Welcome Message </p>
+        </td>
+      <td style="width:50%;">
+        <div id="news">
+          <h3 align="center" style="color:white;padding:10px 0px;background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));"><strong>News</strong></h3>
+          <hr id="hr-main">
+          <marquee direction="up" onmouseover="stop()" onmouseout="start()" scrolldelay='70' height="300px">
+            <ul id="ul_1">
+              {% for i in  news %}
+              <li>{{i.Title}}
+                {% if i.Link %}
+                <a href="{{ i.Link }}">| Read More</a>
+                {% endif %}
+                {% if i.File %}
+                <a href="{{ i.File.url }}">| Read More </a>
+                {% endif %}
+                <hr>
+              </li>
+              {% endfor %}
+      		   			<!-- <li><a href = "http://academic.iiti.ac.in/phd_advertisement/advertisement%20from%20CE.pdf">Advertisement for admission to PhD program in Civil Engineering</a></li> -->
+                 </ul>
+          </marquee>
+          </div>
+      </td>
+      </tr>
+      </table>
+      <br>
+      <br>
+      <table class="table table-bordered">
+      <tr>
+      <td>
+        <h3 align="center" style="color:white;padding:10px 0px;background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166))"><strong>Events</strong></h3>
+        <hr id="hr-main">
+        <marquee direction="up" onmouseover="stop()" onmouseout="start()" scrolldelay='70' height="200px">
+        <ul id="ul_2">
+          {% for i in  events %}
+          <li>{{i.Description}}
+            {% if i.Link %}
+            <a href="{{ i.Link }}">| Read More</a>
+            {% endif %}
+            <hr>
+          </li>
+          {% endfor %}
+        </ul>
+        <h4  id="events_head">Past Events</h4>
+        <ul id="ul_2">
+          {% for i in  events_past %}
+          <li>{{i.Description}}
+            {% if i.Link %}
+            <a href="{{ i.Link }}">| Read More</a>
+            {% endif %}
+            <hr>
+          </li>
+          {% endfor %}
+        </ul>
+      </marquee>
+      </td>
+      <td style="width:50%;">
+        <h3 align="center" style="color:white;padding:10px 0px;background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));"><strong>Recruitment</strong></h3>
+        <hr id="hr-main">
+        <marquee direction="up" onmouseover="stop()" onmouseout="start()" scrolldelay='70' height="200px">
+        <ul id="ul_2">
+          {% for i in  recruit %}
+          <li>{{i.Description}}
+            {% if i.Link %}
+            <font style="color:red;">| DeadLine : i.Deadline </font>
+            <a href="{{ i.Link }}">| Read More</a>
+            {% endif %}
+            {% if i.File %}
+            <a href="{{ i.File.url }}">| Read More </a>
+            {% endif %}
+            <hr>
+          </li>
+          {% endfor %}
+          </ul>
+        </marquee>
+      </td>
+    </tr>
+</table>
+<br>
+<br>
+</div>
+{% endblock %}

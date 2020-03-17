@@ -1,0 +1,20 @@
+{% extends "faculty/base-login.html" %}
+{% block title %} Home | {% endblock %}
+{% block b1 %} style="background-color:#3e3b3b;color:white" {% endblock %}
+{% block body %}
+
+<div class="main">
+  {% if profile %}
+  <p><img src="{{profile.photo.url}}" align="left">
+  <h2> <strong>{{profile.name}}</strong>
+  <h4> {{profile.designation}}
+  <h4> Discipline of Civil Engineering </h4>
+  <h4>Indian Institute of Technology Indore</h4>
+  <br>
+  <h6><a href='{% url "profile" %}'>Edit Profile</a></h6>
+  {% else %}
+  <br><h6><a href='{% url "add-profile" %}'>Add Profile</a></h6>
+  {% endif %}
+</div>
+
+{% endblock %}

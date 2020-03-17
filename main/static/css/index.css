@@ -1,0 +1,144 @@
+#logo{
+  width:100px;
+  height:100px;
+  margin-left:3%;
+  float:left;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+#deptt-heading{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-left:4%;
+  font-size: 30px;
+  text-align: center;
+  /* margin-top: 8%; */
+  line-height: 60px;
+  /* float:left; */
+  color:white;
+}
+#nav1{
+  background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));
+}
+#nav2{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));
+}
+.heading{
+  border-bottom: 5px;
+  border-color: black;
+  border-width: 5px;
+}
+#deptt-heading-college{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2.5px;
+  color:white;
+  font-weight: bold;
+  margin-left:4%;
+  font-size: 23px;
+  text-align: center;
+  margin-top: 4%;
+  line-height: 30px;
+  /* text-decoration: overline; */
+  /* float:left; */
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+#logo-in-nav{
+  width:40px;
+  height:40px;
+  margin-right: 20%;
+  border-radius: 4px;
+}
+.navbar-nav > li{
+  margin-left:10px;
+  margin-right:10px;
+}
+.carousel {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 3%;
+  height: 100%;
+  height: 380px;
+  margin-bottom: 60px;
+  /* height:auto; */
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .carousel-item{
+  height: 100%;
+  height: 380px;
+  background-color: white;
+}
+.carousel-inner > .carousel-item > img {
+ /*  position: absolute;*/
+  top: 0;
+  left: 0;
+  /* width: 40%; */
+  width: 100%;
+  height: 380px;
+  /* width: auto; */
+  margin-right:auto;
+  margin-left:auto;
+  /* height:auto; */
+}
+#hr-main{
+  border-width: 3px;
+  border-color: grey;
+}
+.nav-link{
+  line-height: 30px;
+  color:white;
+  /* width:104%; */
+  /* text-shadow: 1px 1px 1px 1px; */
+}
+.nav-link:hover {
+    background-color: transparent;
+    opacity:0.70;
+    color:white;
+}
+.dropdown-item:hover{
+  background-color: grey;
+}
+#copyright{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image:linear-gradient(-90deg, rgb(0,153,229), rgb(0,83,166));
+}
+.table > tbody > tr:first-child > td {
+    border-width:3px;
+    border-color: grey;
+}
+#nav_item{
+  color:white;
+}
+#car_button{
+  width:80px;
+}
+#car_button:hover{
+  background-color:black;
+  opacity:0.35;
+}
+#ul_1{
+  margin-left:10px;
+  margin-right:10px;
+}
+#ul_2{
+  margin-left:5px;
+  margin-right:5px;
+}
+#events_head{
+  margin-top:50px;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:underline;
+}

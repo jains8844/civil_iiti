@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Workshops |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Short Courses/ Workshops </h2>
+  <hr id="main">
+  {% if workshops %}
+  <ul>
+    {% for workshop in workshops %}
+    <li> {{workshop.Description}} {% if workshop.Link %} | <a href="{{workshop.Link}}">Read More</a>{% endif %} {% if workshop.File %} | <a href="{{workshop.File.url}}">Read More</a>{% endif %} </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

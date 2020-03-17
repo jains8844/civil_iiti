@@ -1,0 +1,23 @@
+from django.contrib import admin
+from .models import About, Research_Area, Sponsored_Project, Consultancy_Project, Teaching_Lab, Research_Lab, Workshop, Conference, Seminar, Industrial_Visit, Industrial_Visit_Picture, Gallery, Computational_Lab, News, Slideshow, Event, Recruitment, Staff, Phd_Student, BTech_Student
+# Register your models here.
+admin.site.register(News)
+admin.site.register(Slideshow)
+admin.site.register(Event)
+admin.site.register(Recruitment)
+admin.site.register(Staff)
+admin.site.register(Gallery)
+admin.site.register(BTech_Student)
+admin.site.register(Phd_Student)
+admin.site.register(Workshop)
+admin.site.register(Conference)
+admin.site.register(Seminar)
+admin.site.register(Industrial_Visit)
+admin.site.register(Industrial_Visit_Picture)
+admin.site.register(Computational_Lab)
+admin.site.register(Research_Area)
+admin.site.register(Sponsored_Project)
+admin.site.register(Consultancy_Project)
+admin.site.register(Teaching_Lab)
+admin.site.register(Research_Lab)
+admin.site.register(About)

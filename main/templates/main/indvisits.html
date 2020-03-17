@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% block title %}Industrial Visits |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Industrial Visits </h2>
+  <hr id="main">
+  {% if visits %}
+  <ul id="industry">
+    {% for visit in visits %}
+    <li> {{visit.Description}}
+      {% if  visit.industrial_visit_picture_set.all %}
+      <br>
+      {% for image in visit.industrial_visit_picture_set.all %}
+      <img src="{{image.Photo.url}}" alt="{{image.Description}}">
+      {% endfor %}
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

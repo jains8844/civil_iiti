@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Research Areas |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Research Areas </h2>
+  <hr id="main">
+  {% if areas %}
+  <ul>
+    {% for area in areas %}
+    <li> {{area.Area}} </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

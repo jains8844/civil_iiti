@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% block css %} {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>
+      {% block title %}{% endblock %} Civil Engineering | IIT Indore
+    </title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="navbar sticky-top"> -->
+    <nav class="navbar navbar-light bg-primary" id="nav1">
+  <a class="navbar-brand" href="#">
+  <img id="logo" src="{% static 'img/logo.png' %}" onclick="window.open('http://www.iiti.ac.in')">
+  <div class="heading">
+  <text id="deptt-heading" onclick="location='{% url 'Home' %}'"><strong>DISCIPLINE OF CIVIL ENGINEERING</strong>
+   </text>
+   </div>
+   <!-- <hr> -->
+   <text id="deptt-heading-college" onclick="location='{% url 'Home' %}'"> INDIAN INSTITUTE OF TECHNOLOGY INDORE </text>
+  </a>
+  </nav>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary" id="nav2">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" id="2">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'Home' %}"><text id="nav_item">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'About' %}"><text id="nav_item">About Us <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <text id="nav_item">People
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'faculty' %}">Faculty</a>
+          <a class="dropdown-item" href="{% url 'Staff' %}">Staff</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="{% url 'Ph.D' %}">Ph.D Students</a>
+          <a class="dropdown-item" href="{% url 'B.Tech' %}">B.Tech Students</a>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <text id="nav_item">Research
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'Research Area' %}">Research Areas</a>
+          <a class="dropdown-item" href="{% url 'Sponsored' %}">Sponsored Projects</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="{% url 'Consultancy' %}">Consultancy Projects</a>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <text id="nav_item">  Facilities
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'Teaching' %}">Teaching Labs</a>
+          <a class="dropdown-item" href="{% url 'Research Labs' %}">Research Labs</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="{% url 'Computational' %}">Computational Labs</a>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <text id="nav_item">  Outreach
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'Workshop' %}">Short courses/ Workshops</a>
+          <a class="dropdown-item" href="{% url 'Conferences' %}">Conferences</a>
+          <!-- <div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="{% url 'Seminar' %}">Seminars</a>
+          <a class="dropdown-item" href="{% url 'Industrial' %}">Industrial Visits</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'Gallery' %}"><text id="nav_item">Gallery <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'Contact' %}"><text id="nav_item">Contact Us <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'login' %}"><text id="nav_item">Login <span class="sr-only">(current)</span></a>
+      </li>
+  </div>
+</nav>
+<script>
+  var distance = $('#nav2').offset().top,
+    $window = $(window);
+
+$window.scroll(function() {
+    if ( ($window.scrollTop() >= distance) && ($("ul#2 li").length==9)) {
+        $("#2").prepend('<li class="navbar-brand"><img onclick="location=\'{% url "Home" %}\'" src="{% static "img/logo.png" %}" id="logo-in-nav"></li>');
+        return;
+    }
+});
+$window.scroll(function() {
+    if ( ($window.scrollTop() < distance) && ($("ul#2 li").length==10)) {
+      var list = document.getElementById("2");
+      list.removeChild(list.childNodes[0]);
+        return;
+    }
+});
+  </script>
+  {% block body %}
+  {% endblock %}
+<div id="copyright" align="center" style="clear:both;"><span style="color:white;"><font style="padding:2px 0px;">Copyright © 2019 Indian Institute of Technology Indore. All Rights Reserved.<br></span></div>
+</div>
+</body>
+</html>

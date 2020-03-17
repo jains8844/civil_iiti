@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %}Staff |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+<h2 id="main_h"> Staff Members</h2>
+<hr id="main">
+{% if staffs %}
+<table class="table">
+<tbody>
+  {% for staff in staffs %}
+  <tr>
+    <td><img {% if staff.File %} src="{{staff.File.url}}" {% endif %} id="fac_image" alt="{{staff.Name}}"></td>
+    <td><span id="staffname">{{staff.Name}}</span><p id="staffdesc"><br>Email : {{staff.Email}}<br>IIT Indore</p></td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endif %}
+{% endblock %}

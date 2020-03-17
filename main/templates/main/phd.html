@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block title %}Ph.D Students |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+<h2 id="main_h"> Research Scholars </h2>
+  <hr id="main">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name of the Scholar</th>
+      <th scope="col">Designation & Roll Number</th>
+      <th scope="col">Date of Joining</th>
+      <th scope="col">Supervisor</th>
+      <th scope="col">Email ID</th>
+    </tr>
+  </thead>
+  {% if students %}
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <td>{{student.Name}}</td>
+      <td>Research Scholar<br>{{student.Roll_no}}</td>
+      <td>{{student.Date_of_joining}}</td>
+      <td>{{student.Supervisor}}</td>
+      <td>{{student.Email}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  {% endif %}
+  </table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Gallery |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Image Gallery </h2>
+  <hr id="main">
+  {% if pictures %}
+  <div id="gallery">
+    {% for picture in pictures %}
+    <img src="{{picture.Picture.url}}" alt="{{forloop.counter}}">
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'faculty/base-detail.html' %}
+{% block title %} Education | {% endblock %}
+{% block b2 %} style="background-color:#3e3b3b;color:white" {% endblock %}
+{% block body %}
+
+<h3><strong>Education</strong></h3>
+{% if education %}
+<ul>
+{% for edu in education %}
+<li><h5>{{edu.description}}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

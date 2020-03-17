@@ -1,0 +1,169 @@
+{% extends 'main/base.html' %}
+{% block title %} Faculty | {% endblock %}
+{% load static %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+<h2 id="main_h"> Faculty </h2>
+<hr id="main">
+<div class="all">
+  <div class="fac_members">
+    <h2> Head of the Discipline </h2>
+    <hr id="main2">
+    <table class="table">
+      <tbody>
+        {% for detail in hod %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="fac_members">
+    <h2> Faculty Members </h2>
+    <hr id="main2">
+    <table class="table">
+      <tbody>
+        {% for detail in associate %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+        {% for detail in assistant %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+        {% for detail in associateII %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="fac_members">
+    <h2> Associated Faculty Members </h2>
+    <hr id="main2">
+    <table class="table">
+      <tbody>
+        {% for detail in visiting %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="fac_members">
+    <h2> Adjunct Professors </h2>
+    <hr id="main2">
+    <table class="table">
+      <tbody>
+        {% for detail in adjunct %}
+        <tr>
+        <td id="fac_img"><img id="fac_image" src="{{detail.photo.url}}"></td>
+        <td><a href="{% url 'fac-detail' detail.pk %}" id="facname"> {{detail.name}} </a><br>
+        <p id="facdesc"> {{detail.designation}}<br><br>
+        Office : {{detail.office}}<br>
+        Email : {{detail.email}}<br>
+        Phone : {{detail.phone}}<br>
+        Mobile : {{detail.mobile}}
+        </p></td>
+        <td><p id="research">Research Interests :</p>
+          {% if detail.user.research_interest_set.all %}
+          <ul id="facdesc">
+            {% for res in detail.user.research_interest_set.all %}
+            <li> {{res.interest}} </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

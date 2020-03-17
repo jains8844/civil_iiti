@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}About | {% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+<h2 id="main_h"> About </h2>
+  <hr id="main">
+{% if messages %}
+<div style="margin-left:2%;">
+{% for msg in messages %}
+<p> {{msg.Message}} </p>
+{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

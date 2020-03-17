@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block title %}Consultancy Projects |{% endblock %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/other.css' %}"> {% endblock %}
+{% block body %}
+
+  <h2 id="main_h"> Consultancy Projects </h2>
+  <hr id="main">
+  {% if projects %}
+  <ul>
+    {% for project in projects %}
+    <li> {{project.Project}} </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}
